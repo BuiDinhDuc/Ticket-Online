@@ -51,9 +51,11 @@ namespace Ticket_Online
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                     name: "areas",
-                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}") ;
+
+                endpoints.MapAreaControllerRoute(
+                  name: "Admin",
+                 areaName: "Admin",
+                 pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
